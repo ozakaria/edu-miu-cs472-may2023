@@ -1,0 +1,200 @@
+/*
+ * Created By: Osama A. Zakaria
+ * Creation Date: 23 Feb, 2015
+ * Contact: ozakaria@moi.gov.qa
+ * 
+ */
+
+/*
+ *	z-index:
+ *		pages -> from 50-99
+ *		footer -> 100
+ *		page blocker -> 101
+ *		popups -> 110-160
+ *		app blocker -> 200-210
+ */
+
+
+/*********************************** Global Settings ***********************************/ 
+
+
+@font-face {
+	/* font-family: HacenSaudiArabia;
+	src: url(fonts/Hacen_Saudi_Arabia.ttf); */
+}
+
+@font-face {
+	/* font-family: digital7;
+	src: url(fonts/digital_7.ttf); */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	font-size: 1.0em;
+	line-height:1.2em;
+	text-shadow:0 0 3px #777;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.294);
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-backface-visibility: hidden;
+    /*touch-action: manipulation;*/
+	/*-webkit-transform: translate3D(0, 0, 0);*/
+}
+
+html {
+	display: block;
+	/* width: 2048px;
+	height: 1536px; */
+	font-size: 28px;
+	overflow: hidden;
+}
+
+body {
+    background: #eee;
+	display: block;
+	width: 100%;
+	height: 100%;
+	/*word-wrap: break-word;*/
+	color: #481027;
+	text-align:center;
+	text-transform: capitalize;
+	/*text-shadow: 0 2px 3px #eee;*/
+	font-family: "Times New Roman", Georgia, Serif;
+	/*font-family: "Trebuchet MS";*/
+	/*font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
+	font-size: 100%;
+	/*font-weight: 600;*/
+	font-weight: 600;
+	letter-spacing: 0;
+	overflow: hidden;
+	-webkit-touch-callout: none;				/* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;			 /* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;				  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+/* html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} */
+
+a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f00;
+}
+
+abbr {
+    color: red;
+}
+
+/* body {
+    background: #eee;
+} */
+
+.page-wrapper {
+    position: relative;
+    margin: auto;
+    width: 900px;
+    /* border: solid 1px red; */
+    /* border: solid 1px yellow; */
+}
+
+.page-header {
+    width: 900px;
+    position: fixed;
+    top: 20px;
+    text-align: right;
+    /* border: solid 1px red; */
+}
+
+.page-header-cover {
+    background: url(images/cover.jpg) center center/100% 100% no-repeat;
+    width: 100%;
+    height: 140px;
+}
+
+.page-header-cover .personal-photo {
+    position: absolute;
+    top: 45%;
+    left: 40px;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.page-header-cover .personal-photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.page-header-title {
+    /* border: solid 1px red; */
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    width: 78%;
+    position: absolute;
+    top: 105%;
+    right: 0;
+    color: #444;
+}
+
+.page-body {
+    /* border: solid 1px red; */
+    margin: 210px 0;
+    padding: 20px 70px;
+}
+
+.assignments-nav {
+    font-size: 19px;
+    text-align: left;
+}
+
+.assignments-nav h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.assignments-nav a {
+    text-decoration: underline;
+}
+
+.page-footer {
+    background: -webkit-linear-gradient( 90deg, rgb(200,200,200) 0%, rgb(217,217,217) 100%);
+    width: 900px;
+    height: 80px;
+    border-radius: 12px;
+    padding: 9px 25px;
+    position: fixed;
+    bottom: 20px;
+}
+
+.page-footer-program {
+    font-size: 13px;
+    text-align: left;
+    color: #555;
+    font-weight: normal;
+}
+
+.page-footer-validator {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
