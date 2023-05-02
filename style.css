@@ -2,7 +2,6 @@
  * Created By: Osama A. Zakaria
  * Creation Date: 01 May, 2023
  * Contact: osamaahmed.abdelhamid@miu.edu
- * 
  */
 
 
@@ -244,7 +243,7 @@ nav h2 {
 nav:hover h2 {
     transform: translateY(-2px);
     box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
-    transistion: all 0.4s;
+    /* transistion: all 0.4s; */
 }
 
 #toggle {
@@ -279,7 +278,7 @@ h2::before {
 
 #toggle:focus~h2 {
     /* background: mediumorchid; */
-    background: -webkit-linear-gradient(90deg, rgb(217, 217, 217) 0%, rgb(21200, 200, 200) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(217, 217, 217) 0%, rgb(200, 200, 200) 100%);
     transition: background 0.45s;
 }
 
@@ -324,16 +323,16 @@ nav ul li {
     border-radius: 20px;
 }
 
-nav ul li:hover,
-nav ul li a:focus {
-    /* background: mediumorchid; */
-    /* background: -webkit-linear-gradient(90deg, rgb(300, 300, 300) 0%, rgb(21200, 200, 200) 100%); */
-    /* transition: background 0.45s; */
-    /* color: red; */
-    /* border-radius: 20px; */
-    /* margin: 0.25rem 0; */
-    /* padding: 0.20rem 0; */
-}
+/* nav ul li:hover,
+nav ul li a:focus { */
+/* background: mediumorchid; */
+/* background: -webkit-linear-gradient(90deg, rgb(300, 300, 300) 0%, rgb(21200, 200, 200) 100%); */
+/* transition: background 0.45s; */
+/* color: red; */
+/* border-radius: 20px; */
+/* margin: 0.25rem 0; */
+/* padding: 0.20rem 0; */
+/* } */
 
 nav ul a {
     display: block;
@@ -349,10 +348,6 @@ nav ul a {
     margin: auto;
     color: #36454F;
 }
-
-
-
-
 
 /* nav {
     margin: 27px auto 0;
