@@ -107,7 +107,7 @@ abbr {
 .page-header {
     width: 900px;
     position: fixed;
-    top: 20px;
+    /* top: 20px; */
     text-align: right;
     z-index: 1;
     /* border: solid 1px red; */
