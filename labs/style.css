@@ -80,9 +80,9 @@ body {
 }
 
 a {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
+    color: #0084c6;
+    font-weight: normal;
+    /* text-decoration: none; */
 }
 
 a:hover {
@@ -103,6 +103,8 @@ abbr {
     /* border: solid 1px red; */
     /* border: solid 1px yellow; */
 }
+
+/****** Page Header Classes ******/
 
 .page-header {
     width: 900px;
@@ -136,17 +138,18 @@ abbr {
 }
 
 .page-header-title {
-    /* border: solid 1px red; */
     font-size: 21px;
     font-weight: normal;
-    width: 100%;
+    /* width: 100%; */
     position: absolute;
     top: 100%;
     right: 0;
+    left: 0;
     color: #444;
     background: -webkit-linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(217, 217, 217) 100%);
     padding: 10px 20px 10px 185px;
     border-radius: 0 0 15px 15px;
+    /* border: solid 1px red; */
 }
 
 .page-header-title-left {
@@ -161,67 +164,114 @@ abbr {
     width: 49%;
 }
 
+/****** Page Body Classes ******/
+
 .page-body {
     /* border: solid 1px red; */
     /* margin: 210px 0; */
     width: 900px;
     padding: 40px;
     position: fixed;
-    top: 205px;
+    top: 190px;
     bottom: 100px;
     overflow: scroll;
+    /* overflow-x: hidden; */
 }
 
-.assignments-nav {
-    font-size: 19px;
+.page-body-content {
     text-align: left;
-}
-
-.assignments-nav h2 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.assignments-nav a {
-    border-bottom: dashed 1px #444;
-    /* text-decoration: underline; */
-}
-
-.page-footer {
-    width: 900px;
-    height: 80px;
-    border-radius: 12px;
-    padding: 9px 25px;
-    position: fixed;
-    bottom: 20px;
-    background: -webkit-linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(217, 217, 217) 100%);
-}
-
-.page-footer-program {
-    font-size: 13px;
-    text-align: left;
-    color: #555;
+    font-size: 18px;
     font-weight: normal;
+    color: #333;
+    text-align: justify;
+    padding: 10px 0;
+    /* border: solid 1px green; */
 }
 
-.page-footer-validator {
-    position: absolute;
-    right: 20px;
-    top: 25px;
+/*** Main Navigation Classes ***/
+
+nav.style1 {
+    text-align: left;
+    /* padding-left: 155px; */
+    margin-left: 155px;
+    font-size: 18px;
+    border-bottom: dotted 1px #555;
+    /* border: solid 1px yellow; */
 }
 
+nav.style1 ul {
+    margin: auto;
+}
 
+nav.style1 ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
 
+nav.style1 ul li a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #333;
+}
 
+nav.style1 ul li.selected a {
+    color: #0084c6;
+}
 
-nav {
+/*** Current Navigation Classes ***/
+
+.currentnav {
+    text-align: left;
+    padding-left: 155px;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #888;
+    /* border: solid 1px yellow; */
+}
+
+.currentnav li {
+    display: none;
+}
+
+.currentnav li.selected {
+    display: inline-block;
+}
+
+.currentnav li:first-child {
+    display: inline-block;
+}
+
+.currentnav li::before {
+    display: inline-block;
+    content: '⇨';
+    margin: 0 10px 0 5px;
+}
+
+.currentnav li:first-child::before {
+    display: inline-block;
+    content: '';
+    margin: 0;
+}
+
+.currentnav a {
+    color: #888;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/*** Navigation 2 Classes ***/
+
+nav.style2 {
     margin: auto;
     /* margin-top: 40px; */
     position: relative;
     width: clamp(320px, 50vw, 100%);
+    text-align: center;
+    max-width: 500px;
 }
 
-nav h2 {
+nav.style2 h2 {
     font-size: 20px;
     border-radius: 20px;
     position: relative;
@@ -240,7 +290,7 @@ nav h2 {
     transition: all 0.4s;
 }
 
-nav:hover h2 {
+nav.style2:hover h2 {
     transform: translateY(-2px);
     box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
     /* transistion: all 0.4s; */
@@ -257,7 +307,7 @@ nav:hover h2 {
     height: 40px;
 }
 
-h2::before {
+nav.style2 h2::before {
     position: absolute;
     right: 0;
     top: 0;
@@ -292,7 +342,7 @@ h2::before {
     transition: opacity 0.3s ease-in-out;
 }
 
-nav ul {
+nav.style2 ul {
     padding-left: 0;
     padding-top: 1rem;
     padding: 1rem 10px;
@@ -308,7 +358,7 @@ nav ul {
     font-size: 20px;
 }
 
-nav ul li {
+nav.style2 ul li {
     border-radius: 2px;
     position: relative;
     display: inline-block;
@@ -323,15 +373,15 @@ nav ul li {
     border-radius: 20px;
 }
 
-nav ul li.done {
+nav.style2 ul li.done {
     /* background: -webkit-linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(217, 217, 217) 100%); */
-	background: 
+    background:
         url(images/checked.png) 20px center/20px 20px no-repeat,
         -webkit-linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(217, 217, 217) 100%);
 }
-    
-/* nav ul li:hover,
-nav ul li a:focus { */
+
+/* nav.style2 ul li:hover,
+nav.style2 ul li a:focus { */
 /* background: mediumorchid; */
 /* background: -webkit-linear-gradient(90deg, rgb(300, 300, 300) 0%, rgb(21200, 200, 200) 100%); */
 /* transition: background 0.45s; */
@@ -341,113 +391,86 @@ nav ul li a:focus { */
 /* padding: 0.20rem 0; */
 /* } */
 
-nav ul a {
+nav.style2 ul a {
     display: block;
     color: inherit;
     /* text-transform: lowercase; */
     font-weight: normal;
-    /* text-decoration: none; */
-}
-
-
-.container {
-    max-width: 55ch;
-    margin: auto;
-    color: #36454F;
-}
-
-/* nav {
-    margin: 27px auto 0;
-  
-    position: relative;
-    width: 590px;
-    height: 50px;
-    background-color: #34495e;
-    border-radius: 8px;
-    font-size: 0;
-  }
-  nav a {
-    line-height: 50px;
-    height: 100%;
-    font-size: 15px;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
     text-decoration: none;
-    text-transform: uppercase;
+}
+
+/*** Images Gallery Classes ***/
+
+.gallery {
+    margin: auto;
+    width: 90%;
+    /* border: solid 1px red; */
+}
+
+.gallery .gallery-item {
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #ccc;
+    /* float: left; */
+    width: 170px;
+}
+
+.gallery .gallery-item:hover {
+    border: 1px solid #777;
+}
+
+.gallery .gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery .gallery-item .gallery-item-desc {
+    padding: 10px;
     text-align: center;
-    color: white;
-    cursor: pointer;
-  }
-  nav .animation {
+    font-size: 12px;
+}
+
+/*** Contact Form Classes ***/
+
+.contact-form {
+    /* border: solid 1px red; */
+    padding: 0 0 0 200px;
+}
+
+.contact-form-table {
+    border-spacing: 0;
+}
+
+.contact-form-table td {
+    vertical-align: top;
+    padding: 5px 20px;
+}
+
+/****** Page Footer Classes ******/
+
+.page-footer {
+    width: 900px;
+    height: 80px;
+    border-radius: 12px;
+    padding: 9px 25px;
+    position: fixed;
+    bottom: 20px;
+    background: -webkit-linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(217, 217, 217) 100%);
+}
+
+.page-footer-program {
+    font-size: 13px;
+    text-align: left;
+    color: #555;
+    font-weight: normal;
+}
+
+.page-footer-validator {
     position: absolute;
-    height: 100%;
-    top: 0;
-    z-index: 0;
-    transition: all .5s ease 0s;
-    border-radius: 8px;
-  }
-  a:nth-child(1) {
-    width: 100px;
-  }
-  a:nth-child(2) {
-    width: 110px;
-  }
-  a:nth-child(3) {
-    width: 100px;
-  }
-  a:nth-child(4) {
-    width: 160px;
-  }
-  a:nth-child(5) {
-    width: 120px;
-  }
-  nav .start-home, a:nth-child(1):hover~.animation {
-    width: 100px;
-    left: 0;
-    background-color: #1abc9c;
-  }
-  nav .start-about, a:nth-child(2):hover~.animation {
-    width: 110px;
-    left: 100px;
-    background-color: #e74c3c;
-  }
-  nav .start-blog, a:nth-child(3):hover~.animation {
-    width: 100px;
-    left: 210px;
-    background-color: #3498db;
-  }
-  nav .start-portefolio, a:nth-child(4):hover~.animation {
-    width: 160px;
-    left: 310px;
-    background-color: #9b59b6;
-  }
-  nav .start-contact, a:nth-child(5):hover~.animation {
-    width: 120px;
-    left: 470px;
-    background-color: #e67e22;
-  }
-  
-  h1 {
-    text-align: center;
-    margin: 40px 0 40px;
-    text-align: center;
-    font-size: 30px;
-    color: #ecf0f1;
-    text-shadow: 2px 2px 4px #000000;
-    font-family: 'Cherry Swash', cursive;
-  }
-  
-  p {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      color: #ecf0f1;
-      font-family: 'Cherry Swash',cursive;
-      font-size: 16px;
-  }
-  
-  span {
-      color: #2BD6B4;
-  } */
+    right: 20px;
+    top: 25px;
+}
+
+.page-footer-validator a {
+    text-decoration: none;
+}
