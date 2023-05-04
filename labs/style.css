@@ -446,6 +446,218 @@ nav.style2 ul a {
     padding: 5px 20px;
 }
 
+/*** Login Form Classes ***/
+
+.login-welcome-container {
+    padding: 20px 0;
+    margin: 5px 0;
+    text-align: center;
+    background: url(images/logo_miu.png) 2% center/55px 85% no-repeat,
+                url(images/logo_miu.png) 98% center/55px 85% no-repeat,
+                #3f5188;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login-section {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    /* border: solid 1px red; */
+    margin: auto;
+    text-align: left;
+}
+
+.login-section a {
+    color: #5c8ecb;
+    text-shadow: none;
+}
+
+/* .login-section-left {
+} */
+
+.login-section-right {
+    padding: 20px 40px 0;
+    text-align: justify;
+    font-size: 15px;
+    text-shadow: none;
+    /* border: solid 1px red; */
+}
+
+.login-section h2 {
+    font-size: 25px;
+    font-weight: 100;
+    margin: 15px 0;
+}
+
+.login-hint1 {
+    font-size: 15px;
+    color: #777;
+    font-weight: 100;
+}
+
+.azure-button {
+    background: #fff url(images/azure_ad.png) center center/100px 80% no-repeat;
+    padding: 20px 0;
+    margin: 15px 0;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.azure-button:hover {
+    background-color: #d3f0ff;
+}
+
+.azure-button:active {
+    background-color: #eee;
+}
+
+.login-button {
+    background: #000;
+    font-size: 16px;
+    padding: 8px 0;
+    margin: 15px 0;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #fff;
+    color: #000;
+}
+    
+.login-button:active {
+    background: #ccc;
+    color: #000;
+    border: solid 1px #aaa;
+}
+
+.submit-ticket {
+    background: #000;
+    font-size: 16px;
+    padding: 8px 30px;
+    margin: 15px 0;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.submit-ticket:hover {
+    background: #fff;
+    color: #000;
+}
+
+.submit-ticket:active {
+    background: #ccc;
+    color: #000;
+    border: solid 1px #aaa;
+}
+
+.login-alternatives {
+    position: relative;
+    text-align: center;
+    /* border: solid 1px red; */
+}
+
+.login-alternatives-text {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 100;
+    text-shadow: none;
+    display: inline-block;
+    padding: 0 10px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.login-alternatives::before,
+.login-alternatives::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 0;
+    width: 35%;
+    border-bottom: solid 1px #aaa;
+}
+
+.login-alternatives::before {
+    left: 0;
+}
+
+.login-alternatives::after {
+    right: 0;
+}
+
+.login-form-label {
+    color: #555;
+    font-size: 15px;
+    margin: 15px 0 0 0;
+}
+
+.login-input {
+    font-size: 15px;
+    font-weight: 100;
+    background: #fff;
+    border: solid 1px #bbb;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 15px;
+    text-shadow: none;
+    /* margin: 0 0 10px 0; */
+}
+
+.login-input::placeholder {
+    font-size: 14px;
+    font-weight: 100;
+    color: #aaa;
+    text-shadow: none;
+}
+
+.login-settings {
+    text-align: center;
+    margin: 15px 0 0 0;
+}
+
+.login-settings-item {
+    display: inline-block;
+    width: 49%;
+    /* border: solid 1px yellow; */
+    margin: auto;
+}
+
+.login-settings-item-left {
+    text-align: left;
+    color: #888;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.login-settings-item-left input,
+.login-settings-item-left label {
+    cursor: pointer;
+    margin: 0 5px 0 0;
+}
+
+.login-settings-item-right {
+    text-align: right;
+    font-weight: 100;
+    font-size: 15px;
+}
+
 /****** Page Footer Classes ******/
 
 .page-footer {
