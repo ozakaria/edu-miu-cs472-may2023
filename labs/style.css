@@ -93,6 +93,149 @@ abbr {
     color: red;
 }
 
+
+/*********************************** Common Classes ***********************************/
+
+
+.button.style1 {
+    background: #000;
+    font-size: 16px;
+    padding: 8px 0;
+    margin: 15px 0;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button.style1:hover {
+    background: #fff;
+    color: #000;
+}
+    
+.button.style1:active {
+    background: #ccc;
+    color: #000;
+    border: solid 1px #aaa;
+}
+
+.button.style2 {
+    background: #fff url(images/azure_ad.png) center center/100px 80% no-repeat;
+    padding: 20px 0;
+    margin: 15px 0;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button.style2:hover {
+    background-color: #d3f0ff;
+}
+
+.button.style2:active {
+    background-color: #eee;
+}
+
+.button.style3 {
+    background: #fff;
+    font-size: 15px;
+    padding: 5px 16px;
+    margin-left: 15px;
+    border: solid 1px #bbb;
+    border-radius: 5px;
+    color: #666;
+    cursor: pointer;
+}
+
+.button.style3:hover {
+    background: #ddd;
+    color: #333;
+    border-color: #ddd;
+}
+
+.button.style3:active {
+    background: #d3f0ff;
+    color: #000;
+    border: solid 1px #d3f0ff;
+}
+
+.button.style3.color1 {
+    border-color: #033c73;
+    color: #033c73;
+}
+
+.button.style3.color2 {
+    border-color: #dd5600;
+    color: #dd5600;
+}
+
+.button.style3.color3 {
+    border-color: #2fa4e7;
+    color: #2fa4e7;
+}
+
+.button.style4 {
+    background: -webkit-linear-gradient(90deg, rgb(240, 240, 240) 0%, rgb(250, 250, 250) 100%);
+    font-size: 15px;
+    padding: 5px 16px;
+    border: solid 1px #bbb;
+    border-radius: 5px;
+    color: #666;
+    cursor: pointer;
+}
+
+.button.style4:hover {
+    background: #fff;
+    color: #333;
+    border-color: #888;
+}
+    
+.button.style4:active {
+    background: #d3f0ff;
+    color: #0a2d41;
+    border: solid 1px #d3f0ff;
+}
+
+.texted-seperator {
+    position: relative;
+    text-align: center;
+    /* border: solid 1px red; */
+}
+
+.texted-seperator-text {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 100;
+    text-shadow: none;
+    display: inline-block;
+    padding: 0 10px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.texted-seperator::before,
+.texted-seperator::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 0;
+    width: 35%;
+    border-bottom: solid 1px #aaa;
+}
+
+.texted-seperator::before {
+    left: 0;
+}
+
+.texted-seperator::after {
+    right: 0;
+}
+
+
 /*********************************** Page Classes ***********************************/
 
 
@@ -138,7 +281,7 @@ abbr {
 }
 
 .page-header-title {
-    font-size: 21px;
+    font-size: 18px;
     font-weight: normal;
     /* width: 100%; */
     position: absolute;
@@ -183,9 +326,43 @@ abbr {
     font-size: 18px;
     font-weight: normal;
     color: #333;
-    text-align: justify;
     padding: 10px 0;
     /* border: solid 1px green; */
+}
+
+.page-body-content.style1 {
+    text-align: left;
+}
+
+.page-body-content.style2 {
+    text-align: center;
+}
+
+.page-body-content.style3 {
+    text-align: right;
+}
+
+.page-body-content.style4 {
+    text-align: justify;
+}
+
+.page-body-content-left {
+    display: inline-block;
+    width: 49%;
+    /* border: solid 1px red; */
+}
+
+.page-body-content-right {
+    display: inline-block;
+    width: 49%;
+    /* border: solid 1px red; */
+}
+
+.page-sub-title {
+    font-size: 25px;
+    font-weight: 100;
+    margin: 15px 0;
+    text-align: left;
 }
 
 /*** Main Navigation Classes ***/
@@ -194,7 +371,7 @@ nav.style1 {
     text-align: left;
     /* padding-left: 155px; */
     margin-left: 155px;
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: dotted 1px #555;
     /* border: solid 1px yellow; */
 }
@@ -206,7 +383,7 @@ nav.style1 ul {
 nav.style1 ul li {
     list-style: none;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 nav.style1 ul li a {
@@ -399,6 +576,82 @@ nav.style2 ul a {
     text-decoration: none;
 }
 
+.nav-bar {
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.nav-bar.style1 {
+    background: -webkit-linear-gradient(90deg, rgb(29, 156, 229) 0%, rgb(83, 180, 235) 100%);
+}
+
+.nav-bar .nav-bar-left {
+    text-align: left;
+    display: inline-block;
+    text-align: left;
+    /* border: solid 1px red; */
+    width: 67%
+}
+
+.nav-bar .nav-bar-right {
+    text-align: right;
+    display: inline-block;
+    text-align: right;
+    /* border: solid 1px red; */
+    width: 32%
+}
+
+.nav-bar.style1 .nav-bar-left li {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.nav-bar.style1 .nav-bar-left li::before {
+    display: inline-block;
+    content: '\8b';
+    /* width: 10px; */
+    /* height: 10px; */
+    /* margin: 0 0 0 10px; */
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: -5px;
+    border-left: solid 1px white;
+}
+
+.nav-bar.style1 .nav-bar-left li:first-child::before {
+    display: none;
+    visibility: hidden;
+}
+
+.nav-bar.style1 .nav-bar-left li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-bar.style1 .nav-bar-left li a:hover {
+    color: #0a2d41;
+}
+
+.nav-bar.style1 .nav-bar-left li:first-child a:hover {
+    color: #fff;
+}
+
+.nav-bar.style1 .nav-bar-right li {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px 5px;
+    position: relative;
+}
+
+.nav-bar.style1 .nav-bar-right li a {
+    color: #fff;
+}
+    
 /*** Images Gallery Classes ***/
 
 .gallery {
@@ -446,9 +699,9 @@ nav.style2 ul a {
     padding: 5px 20px;
 }
 
-/*** Login Form Classes ***/
+/*** Form Classes ***/
 
-.login-welcome-container {
+.content-badge-container {
     padding: 20px 0;
     margin: 5px 0;
     text-align: center;
@@ -461,154 +714,60 @@ nav.style2 ul a {
     font-weight: 100;
 }
 
-.login-container {
+.content-section-container {
     text-align: center;
 }
 
-.login-section {
+.content-section {
     display: inline-block;
-    width: 49%;
+    width: 47%;
     vertical-align: top;
-    /* border: solid 1px red; */
     margin: auto;
     text-align: left;
+    /* border: solid 1px red; */
 }
 
-.login-section a {
+.content-section a {
     color: #5c8ecb;
     text-shadow: none;
 }
 
-/* .login-section-left {
-} */
+.content-section-left {
+    margin-right: 10px;
+}
 
-.login-section-right {
-    padding: 20px 40px 0;
+.content-section-right {
     text-align: justify;
     font-size: 15px;
     text-shadow: none;
+    margin-left: 10px;
     /* border: solid 1px red; */
 }
 
-.login-section h2 {
-    font-size: 25px;
-    font-weight: 100;
-    margin: 15px 0;
+.content-section-right.style2 {
+    padding: 20px 40px 0;
 }
 
-.login-hint1 {
+.content-hint1 {
     font-size: 15px;
     color: #777;
     font-weight: 100;
 }
 
-.azure-button {
-    background: #fff url(images/azure_ad.png) center center/100px 80% no-repeat;
-    padding: 20px 0;
-    margin: 15px 0;
-    width: 100%;
-    border: solid 1px #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.azure-button:hover {
-    background-color: #d3f0ff;
-}
-
-.azure-button:active {
-    background-color: #eee;
-}
-
-.login-button {
-    background: #000;
-    font-size: 16px;
-    padding: 8px 0;
-    margin: 15px 0;
-    width: 100%;
-    border: solid 1px #ccc;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.login-button:hover {
-    background: #fff;
-    color: #000;
-}
-    
-.login-button:active {
-    background: #ccc;
-    color: #000;
-    border: solid 1px #aaa;
-}
-
-.submit-ticket {
-    background: #000;
-    font-size: 16px;
-    padding: 8px 30px;
-    margin: 15px 0;
-    border: solid 1px #ccc;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.submit-ticket:hover {
-    background: #fff;
-    color: #000;
-}
-
-.submit-ticket:active {
-    background: #ccc;
-    color: #000;
-    border: solid 1px #aaa;
-}
-
-.login-alternatives {
-    position: relative;
-    text-align: center;
-    /* border: solid 1px red; */
-}
-
-.login-alternatives-text {
-    color: #aaa;
-    font-size: 15px;
-    font-weight: 100;
-    text-shadow: none;
-    display: inline-block;
-    padding: 0 10px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-}
-
-.login-alternatives::before,
-.login-alternatives::after {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 50%;
-    height: 0;
-    width: 35%;
-    border-bottom: solid 1px #aaa;
-}
-
-.login-alternatives::before {
-    left: 0;
-}
-
-.login-alternatives::after {
-    right: 0;
-}
-
-.login-form-label {
+.content-form-label {
     color: #555;
     font-size: 15px;
     margin: 15px 0 0 0;
 }
 
-.login-input {
+.content-form-hint-label {
+    color: #888;
+    font-size: 13px;
+    margin: 4px 0 0 0;
+    text-shadow: none;
+}
+
+.content-form-input {
     font-size: 15px;
     font-weight: 100;
     background: #fff;
@@ -620,12 +779,20 @@ nav.style2 ul a {
     /* margin: 0 0 10px 0; */
 }
 
-.login-input::placeholder {
+.content-form-input::placeholder {
     font-size: 14px;
     font-weight: 100;
     color: #aaa;
     text-shadow: none;
 }
+
+.content-form-buttons {
+    text-align: right;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+
+/*** Login Form Classes ***/
 
 .login-settings {
     text-align: center;
