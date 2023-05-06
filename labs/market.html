@@ -38,6 +38,7 @@
                     <li><a href="images.html">Images</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="support.html">Help Desk</a></li>
+                    <li><a href="marketlogin.html">Market Login</a></li>
                     <li class="selected"><a href="market.html">Dome Market</a></li>
                 </ul>
             </nav>
@@ -50,6 +51,7 @@
                     <li><a href="contact.html">CONTACT</a></li>
                     <li><a href="images.html">IMAGES</a></li>
                     <li><a href="support.html">HELP DESK</a></li>
+                    <li><a href="marketlogin.html">LOGIN GOLDEN DOME MARKET</a></li>
                     <li class="selected"><a href="market.html">GOLDEN DOME MARKET</a></li>
                 </ul>
             </div>
@@ -65,7 +67,7 @@
                             <li><a href="#">Suppliers</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="nav-bar-right">
                         <ul>
                             <li>Hello Osama!</li>
@@ -77,46 +79,62 @@
 
                 <div class="content-section-container">
 
-                    <h2 class="page-sub-title">New Product Form</h2>
+                    <form action="marketlogin.html" method="get" target="_self" autocomplete="on" accept-charset="UTF-8" name="marketForm">
 
-                    <div class="content-section content-section-left">
+                        <h2 class="page-sub-title">New Product Form</h2>
 
-                        <p class="content-form-label">Product Number</p>
-                        <input type="number" class="content-form-input" value="" placeholder="Enter product number" min="0" oninput="validity.valid||(value='');" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        <div class="content-section content-section-left">
 
-                        <p class="content-form-label">Name</p>
-                        <input type="text" class="content-form-input" value="" placeholder="Enter product name">
+                            <p class="content-form-label">Product Number</p>
+                            <input type="number" class="content-form-input" value="" placeholder="Enter product number"
+                                min="0" oninput="validity.valid||(value='');"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                required>
 
-                        <p class="content-form-label">Unit Price</p>
-                        <input type="number" class="content-form-input" value="" placeholder="Enter product price" min="0" oninput="validity.valid||(value='');" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                            <p class="content-form-label">Name</p>
+                            <input type="text" class="content-form-input" value="" placeholder="Enter product name"
+                                required>
 
-                    </div>
+                            <p class="content-form-label">Unit Price</p>
+                            <input type="number" class="content-form-input" value="" placeholder="Enter product price"
+                                min="0" oninput="validity.valid||(value='');"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                required>
 
-                    <div class="content-section content-section-right">
-                        
-                        <p class="content-form-label">Quantity in stock</p>
-                        <input type="number" class="content-form-input" value="" placeholder="Enter product quantity in stock" min="0" oninput="validity.valid||(value='');" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        </div>
 
-                        <p class="content-form-label">Supplier</p>
-                        <select class="content-form-input">
-                            <option value="" disabled selected hidden>Choose a Supplier ...</option>
-                            <option>Supplier 1</option>
-                            <option>Supplier 2</option>
-                            <option>Supplier 3</option>
-                            <option>Supplier 4</option>
-                        </select>
+                        <div class="content-section content-section-right">
 
-                        <p class="content-form-label">Date supplied</p>
-                        <input type="date" class="content-form-input" pattern="\d{4}-\d{2}-\d{2}" value="" placeholder="yyyy-mm-dd">
-                        <p class="content-form-hint-label">Enter a valid Date</p>
+                            <p class="content-form-label">Quantity in stock</p>
+                            <input type="number" class="content-form-input" value=""
+                                placeholder="Enter product quantity in stock" min="0"
+                                oninput="validity.valid||(value='');"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                required>
 
-                    </div>
+                            <p class="content-form-label">Supplier</p>
+                            <select class="content-form-input" required>
+                                <option value="" disabled selected hidden>Choose a Supplier ...</option>
+                                <option>Supplier 1</option>
+                                <option>Supplier 2</option>
+                                <option>Supplier 3</option>
+                                <option>Supplier 4</option>
+                            </select>
 
-                    <div class="content-form-buttons">
-                        <button class="button style3 color1" type="button">Reset</button>
-                        <button class="button style3 color2" type="button">Cancel</button>
-                        <button class="button style3 color3" type="button">Add Product</button>
-                    </div>
+                            <p class="content-form-label">Date supplied</p>
+                            <input type="date" class="content-form-input" pattern="\d{4}-\d{2}-\d{2}" value=""
+                                placeholder="yyyy-mm-dd" required>
+                            <p class="content-form-hint-label">Enter a valid Date</p>
+
+                        </div>
+
+                        <div class="content-form-buttons">
+                            <button class="button style3 color1" type="button" onclick="marketForm.reset()">Reset</button>
+                            <button class="button style3 color2" type="button">Cancel</button>
+                            <button class="button style3 color3" type="submit">Add Product</button>
+                        </div>
+
+                    </form>
 
                 </div>
 

@@ -358,6 +358,11 @@ abbr {
     /* border: solid 1px red; */
 }
 
+.page-body-centered-content {
+    width: 62%;
+    margin: auto;
+}
+
 .page-sub-title {
     font-size: 25px;
     font-weight: 100;
@@ -823,6 +828,16 @@ nav.style2 ul a {
     text-align: right;
     font-weight: 100;
     font-size: 15px;
+}
+
+/*** Market Classes ***/
+
+.market-login {
+    /* display: none; */
+}
+
+.market-content {
+    display: none;
 }
 
 /****** Page Footer Classes ******/
