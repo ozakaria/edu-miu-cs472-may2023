@@ -1,6 +1,7 @@
 /*
- * Created By: Osama A. Zakaria
+ * Created By: Osama A. Abdelhamid
  * Creation Date: 01 May, 2023
+ * Student ID: 615881
  * Contact: osamaahmed.abdelhamid@miu.edu
  */
 
@@ -96,6 +97,16 @@ abbr {
 
 /*********************************** Common Classes ***********************************/
 
+
+.separator.style1 {
+    display: block;
+    margin: 20px 0;
+    border-bottom: dashed 1px #777;
+}
+
+pre.style1 {
+    color: #0084c6;
+}
 
 .button.style1 {
     background: #000;
@@ -376,7 +387,7 @@ nav.style1 {
     text-align: left;
     /* padding-left: 155px; */
     margin-left: 155px;
-    font-size: 16px;
+    font-size: 14px;
     border-bottom: dotted 1px #555;
     /* border: solid 1px yellow; */
 }
@@ -386,15 +397,35 @@ nav.style1 ul {
 }
 
 nav.style1 ul li {
+    position: relative;
     list-style: none;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 8px;
+}
+
+nav.style1 ul li::before {
+    display: inline-block;
+    content: '\8b';
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: -6px;
+    border-left: solid 1px #000;
+}
+
+nav.style1 ul li:first-child::before {
+    display: none;
+    visibility: hidden;
 }
 
 nav.style1 ul li a {
     font-weight: normal;
     text-decoration: none;
     color: #333;
+}
+
+nav.style1 ul li a:hover {
+    color: #950a00;
 }
 
 nav.style1 ul li.selected a {
