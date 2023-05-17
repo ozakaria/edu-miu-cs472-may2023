@@ -8,183 +8,84 @@
 "use strict";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 1. Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then- else construct available in Javascript.
+// Answer Q1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function max(num1, num2) {
-	if (num1 > num2) {
-		return num1;
-	} else {
-		return num2;
+const student = {
+	firstName: '',
+	lastName: '',
+	grades: [],
+	inputNewGrade: function (newGrade) {
+		this.grades.push(newGrade);
+	},
+	computeAverageGrade() {
+		return this.grades.reduce((sum, current, index, array) => sum + current / array.length, 0);
 	}
 }
 
+const student1 = Object.create(student);
+student1.firstName = 'Osama';
+student1.lastName = 'Ahmed';
+student1.inputNewGrade(88);
+student1.inputNewGrade(98);
+student1.inputNewGrade(86);
+student1.inputNewGrade(80);
+
+const student2 = Object.create(student);
+student2.firstName = 'Zakaria';
+student2.lastName = 'Abdelhamid';
+student2.inputNewGrade(85);
+student2.inputNewGrade(95);
+student2.inputNewGrade(85);
+student2.inputNewGrade(70);
+
+const students = [student1, student2];
+
+const result = students.reduce((average, stu, index, array) => average + stu.computeAverageGrade() / array.length, 0);
+
+console.log(result);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 2. Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+// Answer Q2
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function maxOfThree(num1, num2, num3) {
-	if (num1 > num2 && num1 > num3) {
-		return num1;
-	} else if (num2 > num1 && num2 > num3) {
-		return num2;
-	} else {
-		return num3;
-	}
+function Student(firstName, lastName, grades = []) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.grades = grades;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 3. Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function isVowel(char) {
-	var vowels = ['a', 'e', 'i', 'o', 'u'];
-	if (vowels.indexOf(char.toLowerCase()) !== -1) {
-		return true;
-	} else {
-		return false;
-	}
+Student.prototype.inputNewGrade = function (newGrade) {
+	this.grades.push(newGrade);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 4. Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an input array of numbers.
-//    For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
-//    Note/Hint: Do these using Imperative programming approach (i.e. for...loop or while...loop)
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function sum(numArray) {
-	var total = 0;
-	for (var i = 0; i < numArray.length; i++) {
-		total += numArray[i];
-	}
-	return total;
+Student.prototype.computeAverageGrade = function () {
+	return this.grades.reduce((sum, current, index, array) => sum + current / array.length, 0);
 }
 
-function multiply(numArray) {
-	var product = 1;
-	for (var i = 0; i < numArray.length; i++) {
-		product *= numArray[i];
-	}
-	return product;
+const stu1 = new Student('Osama', 'Ahmed');
+stu1.inputNewGrade(88);
+stu1.inputNewGrade(98);
+stu1.inputNewGrade(86);
+stu1.inputNewGrade(80);
+
+const stu2 = new Student('Zakaria', 'Abdelhamid');
+stu2.inputNewGrade(85);
+stu2.inputNewGrade(95);
+stu2.inputNewGrade(85);
+stu2.inputNewGrade(70);
+
+const students2 = [stu1, stu2];
+
+const result2 = students2.reduce((average, stu, index, array) => average + stu.computeAverageGrade() / array.length, 0);
+
+console.log(result2);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Answer Q3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Array.prototype.newSort = function () {
+	return this.sort((a, b) => a - b);
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 5. Define a function reverse() that computes the reversal of a string.
-//    For example, reverse("jag testar") should return the string "ratset gaj".
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function reverse(str) {
-	var reversed = '';
-	for (var i = str.length - 1; i >= 0; i--) {
-		reversed += str[i];
-	}
-	return reversed;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 6. Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function findLongestWord(words) {
-	var longest = 0;
-	for (var i = 0; i < words.length; i++) {
-		if (words[i].length > longest) {
-			longest = words[i].length;
-		}
-	}
-	return longest;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 7. Write a function filterLongWords() that takes an array of words and an integer i and returns a new array containing only those words that were longer than i characters.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function filterLongWords(words, i) {
-	var filteredWords = [];
-	for (var j = 0; j < words.length; j++) {
-		if (words[j].length > i) {
-			filteredWords.push(words[j]);
-		}
-	}
-	return filteredWords;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 8. Write a function named, computeSumOfSquares, that takes as input, an array of numbers and calculates and returns the sum of the squares of each number in the input array.
-//    E.g. computeSumOfSquares([1,2,3]) should be computed as 1^2 + 2^2 + 3^2 = 14.
-//    Note: Write your Javascript code without using Imperative programming.
-//    i.e. Do NOT use any explicit looping construct; instead use functional programming style/approach.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function computeSumOfSquares(numbers) {
-	return numbers.map(num => num ** 2).reduce((sum, num) => sum + num, 0);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 9. Write a function named, printOddNumbersOnly, that takes as input, an array of integral numbers and it finds and prints only the numbers which are odd.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function printOddNumbersOnly(numbers) {
-	for (var i = 0; i < numbers.length; i++) {
-		if (numbers[i] % 2 !== 0) {
-			console.log(numbers[i]);
-		}
-	}
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 10. Write a function named, computeSumOfSquaresOfEvensOnly, that takes as input, an array of integral numbers and calculates and returns the sum of the squares of only the even numbers in the input array.
-//     E.g. computeSumOfSquaresOfEvensOnly ([1,2,3,4,5]) should be computed as 2^2 + 4^2 = 20.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function computeSumOfSquaresOfEvensOnly(numbers) {
-	var sum = 0;
-	for (var i = 0; i < numbers.length; i++) {
-		if (numbers[i] % 2 === 0) { // check if the number is even
-			sum += numbers[i] * numbers[i]; // add the square of the even number to the sum
-		}
-	}
-	return sum;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 11. Using the Array.reduce(...) function, re-implement your functions, sum(...) and multiply(...) (defined in Problem 4 above) without using Imperative programming.
-//     i.e. Do NOT use any explicit looping construct; instead use functional programming style/approach.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function sumV2(numArray) {
-	return numArray => numArray.reduce((acc, cur) => acc + cur, 0);
-}
-
-function multiplyV2(numArray) {
-	return numArray => numArray.reduce((acc, cur) => acc * cur, 1);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 12. Write a function named printFibo, that takes as input, a given length, n, and any two starting numbers a and b, and it prints-out the Fibonacci sequence.
-//     e.g. (0, 1, 1, 2, 3, 5, 8, 13, 21, 34,...) of the given length, beginning with a and b.
-//     (e.g.
-//      printFibo(n=1, a=0, b=1), prints-out: "0", as output;
-//      printFibo(n=2, a=0, b=1), prints-out: "0, 1", as output;
-//      printFibo(n=3, a=0, b=1), prints-out: "0, 1, 1", as output;
-//      printFibo(n=6, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5", as output;
-//      printFibo(n=10, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5, 8, 13, 21, 34", as output
-//      ).
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function printFibo(n, a, b) {
-	if (n < 1) {
-		return;
-	}
-
-	let fibo = [a, b];
-	for (let i = 2; i < n; i++) {
-		fibo.push(fibo[i - 1] + fibo[i - 2]);
-	}
-
-	console.log(fibo.join(', '));
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+console.log([7, 5, 2, 4, 3, 9].newSort());
