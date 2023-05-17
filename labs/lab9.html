@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP LABs - Lab9</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="scripts/lab9.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="page-header">
+
+            <div class="page-header-cover">
+                <div class="personal-photo">
+                    <img src="images/profile_photo.jpg" alt="This is Osama's photo" title="This is Osama's photo">
+                </div>
+            </div>
+
+            <div class="page-header-title">
+                <div class="page-header-title-left">OSAMA ABDELHAMID</div>
+                <div class="page-header-title-right">STUDENT ID 615881</div>
+            </div>
+
+        </header>
+
+        <div class="page-body">
+
+            <nav class="style1">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="images.html">Images</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="support.html">Help Desk</a></li>
+                    <li><a href="marketlogin.html">Market Login</a></li>
+                    <li><a href="market.html">Market</a></li>
+                    <li><a href="lab5.html">Lab5</a></li>
+                    <li><a href="lab7.html">Lab7</a></li>
+                    <li><a href="lab8.html">Lab8</a></li>
+                    <li class="selected"><a href="lab9.html">Lab9</a></li>
+                </ul>
+            </nav>
+
+            <div class="currentnav">
+                <ul>
+                    <li><a href="/">WAP LABS</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="images.html">IMAGES</a></li>
+                    <li><a href="support.html">HELP DESK</a></li>
+                    <li><a href="marketlogin.html">LOGIN GOLDEN DOME MARKET</a></li>
+                    <li><a href="market.html">GOLDEN DOME MARKET</a></li>
+                    <li><a href="lab5.html">LAB5 JS INTRO</a></li>
+                    <li><a href="lab7.html">LAB7 Call Context</a></li>
+                    <li><a href="lab8.html">LAB8 Inheritance</a></li>
+                    <li class="selected"><a href="lab9.html">LAB8 Classes</a></li>
+                </ul>
+            </div>
+
+            <div class="page-body-content style1">
+
+                <ol>
+
+                    <li>
+
+<pre>
+Answer Q1
+</pre>
+
+<br>
+
+<pre class="style1">
+function Question(qid, answer) {
+    this.qid = qid;
+    this.answer = answer;
+}
+
+Question.prototype.checkAnswer = function (answer) {
+    return this.answer === answer;
+}
+
+function Student(studentId) {
+    this.studentId = studentId;
+    this.answers = [];
+}
+
+Student.prototype.addAnswer = function (question) {
+    this.answers.push(question);
+}
+
+function Quiz(questions, students) {
+    this.questions = new Map();
+    questions.forEach(q => this.questions.set(q.qid, q.answer));
+    this.students = students;
+}
+
+Quiz.prototype.scoreStudentBySid = function (studentId) {
+    const student = this.students.filter(s => s.studentId === studentId)[0];
+
+    return student.answers.reduce((sum, currentQuestion) => {
+        if (currentQuestion.checkAnswer(this.questions.get(currentQuestion.qid))) {
+            sum = sum + 1;
+        }
+        return sum;
+    }, 0);
+}
+
+Quiz.prototype.getAverageScore = function () {
+    return this.students.reduce((accmulator, student, index, array) => {
+        return accmulator + this.scoreStudentBySid(student.studentId) / array.length;
+    }, 0);
+}
+
+const questions = [new Question(1, 'b'), new Question(2, 'a'), new Question(3, 'b ')];
+
+const student1 = new Student(10);
+student1.addAnswer(new Question(2, 'a'));
+student1.addAnswer(new Question(3, 'b'));
+student1.addAnswer(new Question(1, 'b'));
+
+const student2 = new Student(11);
+student2.addAnswer(new Question(3, 'b'));
+student2.addAnswer(new Question(2, 'a'));
+student2.addAnswer(new Question(1, 'd'));
+
+const students = [student1, student2];
+
+const quiz = new Quiz(questions, students);
+
+let scoreforStudent10 = quiz.scoreStudentBySid(10);
+console.log(scoreforStudent10);
+
+let scoreforStudent11 = quiz.scoreStudentBySid(11);
+console.log(scoreforStudent11);
+
+let average = quiz.getAverageScore();
+console.log(average);
+</pre>
+
+<br>
+
+<button class="button style4">Show Result</button>
+
+<div class="separator style1"></div>
+
+                    </li>
+
+                    <li>
+
+<pre>
+Answer Q2
+</pre>
+
+<br>
+
+<pre class="style1">
+class Question2 {
+    constructor(questionId, answer) {
+        this.questionId = questionId;
+        this.answer = answer;
+    }
+    checkAnswer(correctAnswer) {
+        return this.answer === correctAnswer;
+    }
+}
+class Student2 {
+    constructor(studentId, answers = []) {
+        this.studentId = studentId;
+        this.answers = answers;
+    }
+    addAnswer(question) {
+        this.answers.push(question);
+    }
+}
+class Quiz2 {
+    constructor(questionsArray = [], students = []) {
+        this.questions = new Map();
+        //TODO: add line to convert questionArray to Map questions
+
+        questionsArray.forEach(question => this.questions.set(question.questionId, question.answer));
+        this.students = students;
+    }
+    scoreStudent(studentId) {
+        //TODO: compute student score based on answers
+        let student = this.students.filter(student => student.studentId === studentId)[0];
+        return student.answers.reduce((sum, currentQuestion) => {
+            let questionId = currentQuestion.questionId;
+            //find quesiton id
+            let correctAnswer = this.questions.get(questionId);
+            //get correctAnswer from Map
+            let result = currentQuestion.checkAnswer(correctAnswer);
+            //compare cu rrentQuestion answer with correctAnswer
+            if (result) {
+                sum = sum + 1;
+            }
+            // if(currentQuestion.checkAnswer(this.questions.get(currentQuestion. questionId))){
+            // sum=sum+1;
+            // }
+            return sum;
+        }, 0);
+    }
+    getAverageScore() {
+        return this.students.reduce((average, currentStudent, index, array) => average + this.scoreStudent(currentStudent.studentId) / array.length, 0);
+    }
+}
+const questionsArraywithCorrectAnswers = [new Question2(1, 'a'), new Question2(2, 'b'), new Question2(3, 'd')];
+
+let student5 = new Student2(1001, [new Question2(1, 'b'), new Question2(2, 'b'), new Question2(3, 'b')]);
+
+let student4 = new Student2(1002);
+student4.addAnswer(new Question2(1, 'a'));
+student4.addAnswer(new Question2(2, 'b'));
+student4.addAnswer(new Question2(3, 'd'));
+
+const students3 = [student5, student4];
+
+let quizObj = new Quiz2(questionsArraywithCorrectAnswers, students3);
+console.log(quizObj.scoreStudent(1001));
+console.log(quizObj.scoreStudent(1002));
+console.log(quizObj.getAverageScore());    
+</pre>
+
+<br>
+
+<button class="button style4">Show Result</button>
+
+<div class="separator style1"></div>
+
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+        <footer class="page-footer">
+
+            <div class="page-footer-program">
+                <div>Web Application Programming (WAP CS472)&nbsp;&nbsp;&nbsp;&#8212;&nbsp;&nbsp;&nbsp;May2023</div>
+                <div>Computer Professionals Program (ComPro)</div>
+                <div>MasterU+2019s Degree in Computer Science.</div>
+                <div>Maharishi International University.</div>
+            </div>
+
+            <div class="page-footer-validator">
+                <a
+                    href="https://jigsaw.w3.org/css-validator/validator?uri=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/lab9.html">
+                    <img src="images/w3c-css-logo.png" alt="Valid HTML!">
+                </a>
+                <a
+                    href="https://validator.w3.org/check?url=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/lab9.html">
+                    <img src="images/w3c-html5-logo.png" alt="Valid HTML!">
+                </a>
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
