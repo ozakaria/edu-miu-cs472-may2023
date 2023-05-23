@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    background: #edd3d3;
+    text-transform: uppercase;
+}
