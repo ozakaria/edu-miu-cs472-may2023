@@ -1,12 +1,15 @@
 const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
 const server = http.createServer((req, res) => {
     // Set the content type to "application/pdf"
     res.setHeader('Content-Type', 'application/pdf');
 
+    const pathToFile = path.join(__dirname, "..", "attachments", "file.pdf");
+
     // Read the PDF file
-    fs.readFile('attachments/file.pdf', (err, data) => {
+    fs.readFile(pathToFile, (err, data) => {
         if (err) {
             // If an error occurs while reading the file, send an error response
             res.statusCode = 500;
