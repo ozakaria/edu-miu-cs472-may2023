@@ -1,0 +1,11 @@
+{
+  "name": "lab11_q1",
+  "version": "1.0.0",
+  "description": "Lab11 Q1 Solution",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Osama Abdelhamid",
+  "license": "MIT"
+}

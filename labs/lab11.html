@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAP LABs - Market</title>
+    <title>WAP LABs - Lab9</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="scripts/lab11.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -38,13 +39,13 @@
                     <li><a href="images.html">Images</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="support.html">Help Desk</a></li>
-                    <li class="selected"><a href="marketlogin.html">Market Login</a></li>
+                    <li><a href="marketlogin.html">Market Login</a></li>
                     <li><a href="market.html">Market</a></li>
                     <li><a href="lab5.html">Lab5</a></li>
                     <li><a href="lab7.html">Lab7</a></li>
                     <li><a href="lab8.html">Lab8</a></li>
                     <li><a href="lab9.html">Lab9</a></li>
-                    <li><a href="lab11.html">Lab11</a></li>
+                    <li class="selected"><a href="lab11.html">Lab11</a></li>
                 </ul>
             </nav>
 
@@ -56,55 +57,100 @@
                     <li><a href="contact.html">CONTACT</a></li>
                     <li><a href="images.html">IMAGES</a></li>
                     <li><a href="support.html">HELP DESK</a></li>
-                    <li class="selected"><a href="marketlogin.html">LOGIN GOLDEN DOME MARKET</a></li>
+                    <li><a href="marketlogin.html">LOGIN GOLDEN DOME MARKET</a></li>
                     <li><a href="market.html">GOLDEN DOME MARKET</a></li>
                     <li><a href="lab5.html">LAB5 JS INTRO</a></li>
                     <li><a href="lab7.html">LAB7 Call Context</a></li>
                     <li><a href="lab8.html">LAB8 Inheritance</a></li>
-                    <li><a href="lab9.html">Lab9 Classes</a></li>
-                    <li><a href="lab11.html">LAB11 Node Intro</a></li>
+                    <li><a href="lab9.html">LAB9 Classes</a></li>
+                    <li class="selected"><a href="lab11.html">Node Intro</a></li>
                 </ul>
             </div>
 
             <div class="page-body-content style1">
 
-                <div class="page-body-centered-content">
+                <ol>
 
-                    <form action="market.html" method="get" target="_self" autocomplete="on" accept-charset="UTF-8">
+                    <li>
 
-                        <p class="content-form-label">Email address</p>
-                        <input type="email" class="content-form-input" value="" placeholder="Enter email"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                        <p class="content-form-hint-label">Characters followed by an @ sign, followed by more
-                            characters, and then a "." (characters@characters.domain)</p>
+<pre>
+Answer Q1
+</pre>
 
-                        <p class="content-form-label">Password</p>
-                        <input type="password" class="content-form-input" value="" placeholder="Enter password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" required>
-                        <p class="content-form-hint-label">Password field is at least 10 characters in length and
-                            contain at least one number and one uppercase and lowercase letter.</p>
+<br>
 
-                        <p class="content-form-label">URL</p>
-                        <input type="url" class="content-form-input" value=""
-                            placeholder="Enter any url starting with http or https" pattern="https?://.+" required>
-                        <p class="content-form-hint-label">URL that must start with http:// or https:// followed by at
-                            least one character.</p>
+<pre class="style1">
+Array.prototype.even = function () {
+    let numbers = this;
 
-                        <br>
-                            
-                        <div class="login-settings-item-left">
-                            <input type="checkbox" id="checkMeOutCheckbox">
-                            <label for="checkMeOutCheckbox">Check me out</label>
-                        </div>
+    return numbers.filter(num => num % 2 == 0)
+};
 
-                        <br>
-                        <br>
+Array.prototype.odd = function () {
+    let numbers = this;
 
-                        <button class="button style4" type="submit">Login</button>
+    return numbers.filter(num => num % 2 != 0)
+};
 
-                    </form>
+console.log([1, 2, 3, 4, 5, 6, 7, 8].even());
+console.log([1, 2, 3, 4, 5, 6, 7, 8].odd());
+</pre>
 
-                </div>
+<br>
+
+<button class="button style4">Show Result</button>
+
+<div class="separator style1"></div>
+
+                    </li>
+
+                    <li>
+
+<pre>
+Answer Q2
+</pre>
+
+<br>
+
+<pre class="style1">
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+    // Set the content type to "application/pdf"
+    res.setHeader('Content-Type', 'application/pdf');
+
+    // Read the PDF file
+    fs.readFile('attachments/file.pdf', (err, data) => {
+        if (err) {
+            // If an error occurs while reading the file, send an error response
+            res.statusCode = 500;
+            res.end('Error reading the PDF file');
+            return;
+        }
+
+        // Send the PDF file as the response
+        res.statusCode = 200;
+        res.end(data);
+    });
+});
+
+// Start the server on the specified port
+const port = 3000;
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+</pre>
+
+<br>
+
+<button class="button style4">Show Result</button>
+
+<div class="separator style1"></div>
+
+                    </li>
+
+                </ol>
 
             </div>
 
@@ -121,11 +167,11 @@
 
             <div class="page-footer-validator">
                 <a
-                    href="https://jigsaw.w3.org/css-validator/validator?uri=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/marketlogin.html">
+                    href="https://jigsaw.w3.org/css-validator/validator?uri=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/lab11.html">
                     <img src="images/w3c-css-logo.png" alt="Valid HTML!">
                 </a>
                 <a
-                    href="https://validator.w3.org/check?url=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/marketlogin.html">
+                    href="https://validator.w3.org/check?url=https://ozakaria.github.io/edu-miu-cs472-may2023/labs/lab11.html">
                     <img src="images/w3c-html5-logo.png" alt="Valid HTML!">
                 </a>
             </div>

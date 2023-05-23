@@ -1,0 +1,11 @@
+{
+  "name": "lab11_q2",
+  "version": "1.0.0",
+  "description": "Lab11 Q2 Solution",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Osama Abdelhamid",
+  "license": "MIT"
+}
