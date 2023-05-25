@@ -1,0 +1,19 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "WAP May2023 - Final Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "set PORT=3000 && set NODE_ENV=development && nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Osama Abdelhamid",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

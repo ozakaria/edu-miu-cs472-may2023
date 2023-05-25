@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopUs</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-bzjLLgZOhgXbSvSc5A9LWWo/mSIYf7U7nFbmYIB2Lgmuiw3vKGJuu+abKoaTx4W6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js" integrity="sha256-66f6uQTQkvHF8jpniLWJjnteEfmQaC/tATFew/nTBA8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a style="padding-right: 2em;" class="navbar-brand" href="">ShopUs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"
+                        style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                        <a class="nav-link" href="">Products</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <span id="welcome-message" style="color: #ffffff; margin-right: 0em;">Welcome</span>
+                    <span id="logout-user" class="btn btn-light ml-3">Logout</span>
+                </form>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </header>
+
+    <!-- Start main-content -->
+    <main>
+        <div style="padding-top: 1em;" class="container">
+            <!-- main content here -->
+            <h3>
+                Product List
+            </h3>
+
+            <div style="margin-top: 1em;" id="product-list" style="font-size: 1em">
+                <table class="table table-striped" id="mytable">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProductList">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="padding-top: 1em;" class="container">
+            <!-- main content here -->
+
+            <div class="empty-cart" id="empty-cart">
+                <h3>
+                    Your Shopping Cart
+                </h3>
+
+                <p>
+
+                    There are no items in your shopping cart!
+                </p>
+
+            </div>
+
+            <div style="margin-top: 1em;" id="filled-cart" style="font-size: 1em">
+                <table class="table table-striped" id="mytable">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">ID</th> -->
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+
+
+
+                    </tbody>
+                </table>
+                <div style="text-align: end;">
+                    <strong>Total :</strong> $<span colspan="2" class="text-right" id="total-cart-price">30</span>
+
+                    <button class="ml-3 mr-3 btn btn-dark" id="order-now">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- End main-content -->
+
+    <!-- Start footer -->
+    <footer>
+        <div>
+            <span style="margin-left: 1em;"> Osama Abdelhamid (615881) ::: CS472-WAP</span>
+            <span style="float: right;margin-right: 1em;"> &copy; May 2023</span>
+        </div>
+    </footer>
+    <script src="./js/product.js"></script>
+</body>
+
+</html>
